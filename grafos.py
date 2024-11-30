@@ -44,8 +44,7 @@ def ConsultaCiudadPorID(id):
         r= result.fetchall()
     return r[0]
 
-ciudad = [
-    ConsultaCiudadPorID(1),
+ciudad = [ ConsultaCiudadPorID(1),
     ConsultaCiudadPorID(2),
     ConsultaCiudadPorID(3),
     ConsultaCiudadPorID(4),
@@ -86,7 +85,7 @@ print("*****************************************Primer Grafo********************
 print(g.display_graph())
 
 print("*****************************************Las conecciones de un nodo*****************************************")
-conexion = int(input("Ingrese el numero del nodo a conocer sus conecciones;"))
+conexion = int(input("Ingrese el numero del nodo a conocer sus conexiones;"))
 print(g.get_connections(ciudad[conexion-1]))
 
 
