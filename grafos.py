@@ -44,61 +44,57 @@ def ConsultaCiudadPorID(id):
         r= result.fetchall()
     return r[0]
 
-ciudad = [ ConsultaCiudadPorID(1),
-    ConsultaCiudadPorID(2),
-    ConsultaCiudadPorID(3),
-    ConsultaCiudadPorID(4),
-    ConsultaCiudadPorID(5),
-    ConsultaCiudadPorID(6),
-    ConsultaCiudadPorID(7),
-    ConsultaCiudadPorID(8),
-    ConsultaCiudadPorID(9),
-    ConsultaCiudadPorID(10)
-    ]
+ciudad = { 
+    "ciudad1":ConsultaCiudadPorID(1),
+    "ciudad2":ConsultaCiudadPorID(2),
+    "ciudad3":ConsultaCiudadPorID(3),
+    "ciudad4":ConsultaCiudadPorID(4),
+    "ciudad5":ConsultaCiudadPorID(5),
+    "ciudad6":ConsultaCiudadPorID(6),
+    "ciudad7":ConsultaCiudadPorID(7),
+    "ciudad8":ConsultaCiudadPorID(8),
+    "ciudad9":ConsultaCiudadPorID(9),
+    "ciudad10":ConsultaCiudadPorID(10)
+}
 
 
 g = Graph()
-g.add_edge(ciudad[1-1],ciudad[5-1])
-g.add_edge(ciudad[1-1],ciudad[7-1])
-g.add_edge(ciudad[2-1],ciudad[5-1])
-g.add_edge(ciudad[2-1],ciudad[6-1])
-g.add_edge(ciudad[2-1],ciudad[7-1])
-g.add_edge(ciudad[3-1],ciudad[6-1])
-g.add_edge(ciudad[3-1],ciudad[10-1])
-g.add_edge(ciudad[4-1],ciudad[5-1])
-g.add_edge(ciudad[4-1],ciudad[10-1])
-g.add_edge(ciudad[5-1],ciudad[1-1])
-g.add_edge(ciudad[5-1],ciudad[2-1])
-g.add_edge(ciudad[5-1],ciudad[4-1])
-g.add_edge(ciudad[6-1],ciudad[2-1])
-g.add_edge(ciudad[6-1],ciudad[3-1])
-g.add_edge(ciudad[7-1],ciudad[1-1])
-g.add_edge(ciudad[7-1],ciudad[2-1])
-g.add_edge(ciudad[7-1],ciudad[9-1])
-g.add_edge(ciudad[8-1],ciudad[9-1])
-g.add_edge(ciudad[9-1],ciudad[7-1])
-g.add_edge(ciudad[9-1],ciudad[8-1])
-g.add_edge(ciudad[10-1],ciudad[3-1])
-g.add_edge(ciudad[10-1],ciudad[4-1])
+g.add_edge(ciudad["ciudad1"],ciudad["ciudad5"])
+g.add_edge(ciudad["ciudad1"],ciudad["ciudad7"])
+g.add_edge(ciudad["ciudad2"],ciudad["ciudad5"])
+g.add_edge(ciudad["ciudad2"],ciudad["ciudad6"])
+g.add_edge(ciudad["ciudad2"],ciudad["ciudad7"])
+g.add_edge(ciudad["ciudad3"],ciudad["ciudad6"])
+g.add_edge(ciudad["ciudad3"],ciudad["ciudad10"])
+g.add_edge(ciudad["ciudad4"],ciudad["ciudad5"])
+g.add_edge(ciudad["ciudad4"],ciudad["ciudad10"])
+g.add_edge(ciudad["ciudad5"],ciudad["ciudad1"])
+g.add_edge(ciudad["ciudad5"],ciudad["ciudad2"])
+g.add_edge(ciudad["ciudad5"],ciudad["ciudad4"])
+g.add_edge(ciudad["ciudad6"],ciudad["ciudad2"])
+g.add_edge(ciudad["ciudad6"],ciudad["ciudad3"])
+g.add_edge(ciudad["ciudad7"],ciudad["ciudad1"])
+g.add_edge(ciudad["ciudad7"],ciudad["ciudad2"])
+g.add_edge(ciudad["ciudad7"],ciudad["ciudad9"])
+g.add_edge(ciudad["ciudad8"],ciudad["ciudad9"])
+g.add_edge(ciudad["ciudad9"],ciudad["ciudad7"])
+g.add_edge(ciudad["ciudad9"],ciudad["ciudad8"])
+g.add_edge(ciudad["ciudad10"],ciudad["ciudad3"])
+g.add_edge(ciudad["ciudad10"],ciudad["ciudad4"])
 
 print("*****************************************Primer Grafo*****************************************")
 print(g.display_graph())
 
-print("*****************************************Las conecciones de un nodo*****************************************")
-conexion = int(input("Ingrese el numero del nodo a conocer sus conexiones;"))
-print(g.get_connections(ciudad[conexion-1]))
+print("*****************************************Las conecciones del un nodo 'Ciudad5'*****************************************")
+print(g.get_connections(ciudad["ciudad5"]))
 
 
 print("*****************************************Actualiza las conecciones de un nodo*****************************************")
-nodoActualizacion = int(input("Ingrese el nodo:"))
-vecinoAntiguoActualizacion = int(input("Ingrese el vecino actual:"))
-vecinoNuevoActualizacion = int(input("Ingrese el nuevo vecino:"))
-g.update_edge(ciudad[nodoActualizacion-1],ciudad[vecinoAntiguoActualizacion-1],ciudad[vecinoNuevoActualizacion-1])
+g.update_edge(ciudad["ciudad8"],ciudad["ciudad9"],ciudad["ciudad7"])
 
 
 print("*****************************************Nodo a eliminar*****************************************")
-nodoEliminar = int(input("Ingrese el numero del nodo a eliminar:"))
-g.delete_node(ciudad[nodoEliminar-1])
+g.delete_node(ciudad["ciudad3"])
 
 
 print("*****************************Grafo final*****************************")
