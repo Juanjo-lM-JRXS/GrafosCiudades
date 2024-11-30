@@ -1,0 +1,12 @@
+ciudad1 = "Bogota"
+ciudad2 = "Medellin"
+ciudad3= "Barranquilla"
+ciudad4 = "Valledupar"
+ciudad5 = "Bucaramanga"
+ciudad6 = "Monteria"
+ciudad7 = "Pereira"
+ciudad8 = "Buenaventura"
+ciudad9 = "Cali"
+ciudad10 = "Sincelejo"
+
+grafo no dirigido
