@@ -38,6 +38,7 @@ class Graph:
     def display_graph(self):
         return self.graph
 
+#procedimiento almacenadp
 def ConsultaCiudadPorID(id):
     cursor.callproc("ConsultaCiudadPorID",(id,))
     for result in cursor.stored_results():
@@ -57,7 +58,7 @@ ciudad = {
     "ciudad10":ConsultaCiudadPorID(10)
 }
 
-
+##**********************************************************************
 g = Graph()
 g.add_edge(ciudad["ciudad1"],ciudad["ciudad5"])
 g.add_edge(ciudad["ciudad1"],ciudad["ciudad7"])
