@@ -78,23 +78,22 @@ g.add_edge(ciudad["ciudad7"],ciudad["ciudad2"])
 g.add_edge(ciudad["ciudad7"],ciudad["ciudad9"])
 g.add_edge(ciudad["ciudad8"],ciudad["ciudad9"])
 g.add_edge(ciudad["ciudad9"],ciudad["ciudad7"])
-g.add_edge(ciudad["ciudad9"],ciudad["ciudad8"])
 g.add_edge(ciudad["ciudad10"],ciudad["ciudad3"])
 g.add_edge(ciudad["ciudad10"],ciudad["ciudad4"])
 
 print("*****************************************Primer Grafo*****************************************")
 print(g.display_graph())
 
-print("*****************************************Las conecciones del un nodo 'Ciudad5'*****************************************")
-print(g.get_connections(ciudad["ciudad5"]))
+print("*****************************************Las conexiones del un nodo 'Ciudad5'*****************************************")
+print(g.get_connections(ciudad.get('ciudad5')))
 
 
 print("*****************************************Actualiza las conecciones de un nodo*****************************************")
-g.update_edge(ciudad["ciudad8"],ciudad["ciudad9"],ciudad["ciudad7"])
+g.update_edge(ciudad["ciudad2"],ciudad["ciudad5"],ciudad["ciudad10"])
 
 
 print("*****************************************Nodo a eliminar*****************************************")
-g.delete_node(ciudad["ciudad3"])
+g.delete_node(ciudad["ciudad1"])
 
 
 print("*****************************Grafo final*****************************")
